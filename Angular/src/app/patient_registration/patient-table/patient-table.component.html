@@ -1,0 +1,71 @@
+
+<h2 style="text-align: center">Patient Table</h2>
+
+<table style="width: 2000px; " class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Salutation</th>
+        <th scope="col">Patient Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address </th>
+        <th scope="col">gender</th>
+        <th scope="col">Father Name</th>
+        <th scope="col">Mother Name</th>
+        <th scope="col">Date of birth</th>
+
+        <th scope="col">photo</th>
+        <th scope="col">Religion</th>
+        <th scope="col">Marrital Status</th>
+        <!-- <th scope="col">Date</th> -->
+      </tr>
+    </thead>
+
+    
+      <tbody>
+        <!-- <tr *ngFor = "let items of patientList">
+          <td>{{items.id}}</td>
+          <td><img src="https://freetoolssite.com/wp-content/uploads/2022/02/846799.png.webp" alt=""></td>
+          <td>Muhibbullah Ansary</td>
+          <td>+880 017xx-xxxxxx</td>
+          <td>Mymensingh sadar</td>
+          <td>
+            <span class="action_btn">
+              <a href="#">Edit</a>
+              <a href="#">Remove</a>
+            </span>
+          </td>
+        </tr> -->
+
+ <!--  patientList is coming from interface. here patient.id, Patientname all the fields should be matched with interface-->
+        <tbody>
+      <tr *ngFor = "let patient of patientList">  
+        <td scope="row">{{patient.id}}</td>
+        <td >{{patient.salutation}}</td>
+        <td >{{patient.patientName}}</td>
+        <td>{{patient.age}}</td>
+        <td >{{patient.patientPhone}}</td>
+        <td >{{patient.patientAddress}}</td>
+        <td >{{patient.gender}}</td>
+        <td >{{patient.fatherName}}</td>
+        <td >{{patient.motherName}}</td>
+        <td >{{patient.dateOfBirth}}</td>
+        <td><img style="width: 50px; height: 50px;" src="data:image/png;base64, {{patient.photoName}}"  ></td>
+        <td >{{patient.religion}}</td>
+        <td >{{patient.marritalStatus}}</td>
+
+        <td>
+          <!-- <a class="btn btn-dark" [routerLink]="['/patient-table/patientform-edit',patient.id]">Edit</a> -->
+          <a class="btn btn-danger" (click)="deletelist(patient.id)">Delete</a>
+          <button type="button" class="btn btn-primary" (click)="openModal(patient.id)">Edit modal</button>
+          <br>     
+        </td>
+
+      </tr>
+
+      <br><br>
+      <a class="btn btn-primary" routerLink="/patient-form">Create</a>
+
+    </tbody>
+</table>

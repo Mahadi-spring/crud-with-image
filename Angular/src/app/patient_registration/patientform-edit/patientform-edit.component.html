@@ -1,0 +1,106 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <form [formGroup] = "patientForm" (ngSubmit)="updatePatient()" >
+          <div class="input-group mt-4 mb-sm-3 col-4">
+            <label class="input-group-text" for="inputGroupSelect01">Salutation</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="salutation">
+              
+              <option>Mr.</option>
+              <option>Ms.</option>
+              
+            </select>
+          </div>
+          <div class="mb-sm-1">
+            <label for="txtName" class="form-label">Patient Name</label>
+            <input type="text"  formControlName="patientName" class="form-control"  />
+          </div>
+  
+          <div class="input-group mt-4 mb-sm-3 col-6">
+            <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="gender">
+              
+              <option>Male</option>
+              <option>Female</option>
+              <option>Third Gender</option>
+            </select>
+          </div>
+  
+          
+  
+          <div class="mb-sm-1">
+            <label for="txtName" class="form-label">Age</label>
+            <input type="text"  formControlName="age" class="form-control"  />
+          </div>
+          
+      
+        
+          <div class="row">
+            <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Date of Birth</label>
+              <input type="text" formControlName= "dateOfBirth"
+                     placeholder="---"
+                     class="form-control"
+                     bsDatepicker>
+            </div>
+            <div class="mb-sm-1">
+              <label for="txtName" class="form-label">Father's Name</label>
+              <input type="text"  formControlName="fatherName" class="form-control"  />
+            </div>
+            <div class="mb-sm-1">
+              <label for="txtName" class="form-label">Mother's Name</label>
+              <input type="text"  formControlName="motherName" class="form-control"  />
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">Phone</label>
+              <input type="tel" formControlName="patientPhone" class="form-control"  />
+            </div>
+          
+        </div>
+          <div class="mb-sm-1">
+            <label for="txtName" class="form-label">Patient Address</label>
+            <textarea class="form-control" formControlName="patientAddress" rows="3" ></textarea>
+          </div>
+        
+          
+          <div class="input-group mt-4 mb-sm-3 col-6">
+            <label class="input-group-text" for="inputGroupSelect01">Religion</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="religion">
+              
+              <option>Muslim</option>
+              <option>Hindu</option>
+              <option>Christian</option>
+              <option>Buddhist</option>
+            </select>
+          </div>
+  
+          <div class="input-group mt-4 mb-sm-3 col-6">
+            <label class="input-group-text" for="inputGroupSelect01">Marrital Status</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="marritalStatus">
+              
+              <option>Married</option>
+              <option>Unmarried</option>
+              
+            </select>
+          </div>
+  
+          <figure class="figure">
+            <img src=" " class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">A caption for the above image.</figcaption>
+          </figure>
+          <input type="file" formControlName="patientImage" class="form-control"  />
+        
+            
+           
+           
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  

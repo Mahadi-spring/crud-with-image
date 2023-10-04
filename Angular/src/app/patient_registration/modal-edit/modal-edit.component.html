@@ -1,0 +1,138 @@
+<div class="modal-header">
+  
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <!-- <span aria-hidden="true" class="visually-hidden">&times;</span> -->
+  </button>
+
+
+</div>
+
+
+<div class="modal-body">
+
+  <h3 style="text-align: center" class="modal-title pull-left">Patient Form</h3>
+
+  <div class="page-wrapper p-t-100 p-b-50">
+
+    <div class="wrapper wrapper--w900">
+      <div class="card card-6">
+        <form [formGroup]="patientForm" (ngSubmit)="updatePatient()">
+          <div class="card-heading">
+            <h2 class="title">Apply for job</h2>
+          </div>
+          <div class="card-body">
+
+
+            <div class="form-row">
+              <div class="name">Patient name</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="full_name" formControlName="patientName">
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="name">Father name</div>
+              <div class="value">
+                <input class="input--style-6" type="text" formControlName="fatherName">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Mother name</div>
+              <div class="value">
+                <input class="input--style-6" type="text" formControlName="motherName">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Age</div>
+              <div class="value">
+                <div class="input-group">
+                  <input class="input--style-6" formControlName="age">
+                </div>
+
+
+
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Date of Birth</label>
+              <input type="text" formControlName="dateOfBirth" [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }"
+                placeholder="---" class="form-control" bsDatepicker>
+            </div>
+
+
+            <div class="form-row">
+              <div class="name">Address</div>
+              <div class="value">
+                <div class="input-group">
+                  <textarea class="textarea--style-6" name="message" formControlName="patientAddress"></textarea>
+                </div>
+
+
+
+              </div>
+
+            </div>
+            <div class="form-row">
+              <div class="name">Gender</div>
+              <div class="value">
+                <select id="inputState" class="form-control" formControlName="gender">
+                  <option>--</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Third Gender</option>
+                </select>
+              </div>
+  
+            </div>
+  
+            <div class="form-row">
+              <div class="name">Religion</div>
+              <div class="value">
+                <select id="inputState" class="form-control" formControlName="religion">
+                  <option>--</option>
+                  <option>Muslim</option>
+                  <option>Hindu</option>
+                  <option>Buddhist</option>
+                  <option>Christian</option>
+                </select>
+              </div>
+            </div>
+  
+  
+            <div class="form-row">
+              <div class="name">Upload Image</div>
+              <div class="value">
+                <div class="input-group js-input-file">
+  
+                  <input class="form-control img-hidden-chooser" formControlName="patientImage" type="file"
+                    (change)="selectFile($event)" />
+  
+  
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+          <!-- card-body  -->
+
+          
+          <div class="modal-body">
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+          </div>
+          
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- <div class="card-footer"> -->
+
